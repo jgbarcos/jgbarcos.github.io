@@ -1,0 +1,65 @@
+---
+layout: default
+---
+<div class="home">
+  
+  {{ content }}
+
+  <h1 class="page_heading">Portfolio</h1>
+  
+  <div>
+  {% for project in site.portfolio %}
+    <h2>{{ project.title }}</h2>
+
+        
+    {% if project.technologies %}
+    <ul class="tags">
+      {% for tech in project.technologies %}
+        <li><div class="tag">{{tech}}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+        
+      
+    <div class="project_showcase">     
+    
+      {% if project.image %}
+      <div class="image">
+        <img src="{{ project.image }}" alt="{{ project.title }}">
+      </div>
+      {% endif %}
+      
+      <div class="data">
+        {% if project.when %}
+        <p><strong>When: </strong>{{ project.when }}</p>
+        {% endif %}
+      
+        {% if project.type %}
+        <p><strong>Type: </strong>{{ project.type }} Project</p>
+        {% endif %}
+        
+        {% if project.github %}
+        {% capture github_link %}{{ project.github }}{% endcapture %}
+        <p><strong>Link: </strong> {% include icon-github.html username=github_link  %} </p>
+        {% endif %}
+      </div>
+      
+      <div class="abstract">
+        <p><strong> Description: </strong></p>
+        {{ project.abstract }}
+      </div>
+      
+      {% assign content = project.content | strip_newlines %}
+      {% if content != ""  %}
+      <div class="readmore">
+          <a href="{{ project.url | prepend: site.baseurl }}"> See More... </a>
+      </div>
+      {% endif %}
+      
+    </div>
+
+  {% endfor %}
+  
+  </div>
+
+</div>

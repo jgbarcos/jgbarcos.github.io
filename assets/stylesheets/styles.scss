@@ -1,0 +1,197 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+@charset "utf-8";
+
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+$as_big_grid: (
+  gutter: 1rem,
+  media: 700px,
+);
+
+$as_small_grid: (
+  gutter: 0.5rem,
+  media: 400px,
+);
+
+.project {
+  @include grid-container;
+  padding: 10px;
+   
+  .project_image{
+    @include grid-media($as_big_grid) {
+      @include grid-column(7);
+    }
+    @include grid-media($as_small_grid) {
+      
+    }
+    
+    img {
+      border-radius: 8px;
+    }
+  }
+  .project_text{
+    @include grid-media($as_big_grid) {
+      @include grid-column(5);
+    }
+    @include grid-media($as_small_grid) {
+    }
+  }
+}
+
+.image_hover {
+  position: relative;
+  
+  .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  } 
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+    border-radius: 8px;
+  }
+}
+
+.image_hover:hover .overlay {
+  opacity: 0.85;
+}
+
+//
+// PROJECT GALLERY
+//
+
+$small_layout: (
+  columns: 1,
+  gutter: 1rem
+);
+
+$default_layout: (
+  columns: 2,
+  gutter: 2rem,
+  media: "(min-width: 768px)",
+);
+
+.project_showcase {
+
+  @include grid-container;
+  
+  .image {
+    .img{
+      border-radius: 8px;
+    }
+    
+    @include grid-column(1, $small_layout);
+    
+    @include grid-media($default_layout){
+      @include grid-column(1);
+    }
+    
+    margin-bottom: 2rem;
+  }
+  
+  .data {    
+    @include grid-column(1, $small_layout);
+    
+    @include grid-media($default_layout){
+      @include grid-column(1);
+    }
+  }
+  
+  .abstract {
+    @include grid-column(1, $small_layout);
+    @include grid-media($default_layout){
+      @include grid-column(2);
+    }
+    margin-bottom: 0.25rem;
+  }
+  
+  .readmore {
+    @include grid-column(1, $small_layout);
+    @include grid-media($default_layout){
+      @include grid-column(2);
+    }
+  }
+  
+  
+  margin-bottom: 2.5rem;
+}
+
+
+//
+// LIST OF TAGS
+//
+.tags {
+  list-style: none;
+  margin: 0;
+  overflow: hidden; 
+  padding: 0;
+}
+
+.tags li {
+  float: left; 
+}
+
+.tag {
+  background: #eee;
+  border-radius: 3px 0 0 3px;
+  color: #888;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 20px 0 23px;
+  position: relative;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+}
+ 
+ .tag::before {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+  content: '';
+  height: 6px;
+  left: 10px;
+  position: absolute;
+  width: 6px;
+  top: 10px;
+}
+
+.tag::after {
+  background: #fff;
+  border-bottom: 13px solid transparent;
+  border-left: 10px solid #eee;
+  border-top: 13px solid transparent;
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.tag:hover {
+  background-color: crimson;
+  color: white;
+}
+
+.tag:hover::after {
+   border-left-color: crimson; 
+}
+
