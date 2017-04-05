@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title:  "Realistic Camera Effects"
 image: /images/realistic_camera_rt.png
 featured: yes

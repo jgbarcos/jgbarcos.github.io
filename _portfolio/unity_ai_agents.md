@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title:  "Unity AI Agents"
 image: /images/unity_ai_agents.png
 featured: yes

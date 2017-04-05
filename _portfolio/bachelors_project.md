@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: "Optimization of Fluid Simulations"
 image: /images/bachelors_project.png
 featured: yes

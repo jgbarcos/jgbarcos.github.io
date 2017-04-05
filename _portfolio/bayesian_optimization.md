@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: "Bayesian Optimization"
 image: /images/bayesian_optimization.png
 featured: yes
