@@ -7,7 +7,7 @@ face: "/images/my_face.jpg"
 caption:  "Hi, I'm **Javier García Barcos**<br>Computer Scientist from Zaragoza (Spain)."
 table:
  - icon: "/icons/machine_learning.svg"
-   parraph: "**Machine Learning** is my main focus in academic projects. As curious person, it amazed me all the possibilities of Machine Learning brings. I have experience in Bayesian Optimization, Neural Networks and Graphical Models."
+   parraph: "**Machine Learning** is my main focus in academic projects. As a curious person, it amazed me all the possibilities that Machine Learning brings. I have experience in Bayesian Optimization, Neural Networks and Graphical Models."
  - icon: "/icons/gamedev.svg"
    parraph: "**Game Development** led me to taught myself how to program when I was a teen. That enthusiast has been carried over the years, investing free time into sharpening my game developer skills. My focus is in Gameplay, Artificial Intelligence and Game Engine."
  - icon: "/icons/rugby.svg"
