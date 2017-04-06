@@ -1,11 +1,31 @@
 ---
 layout: default
 ---
-<div class="home">
-  
-  {{ content }}
+<div class="home">  
+  <div class="face_image">
+    <img src="{{ site.url }}/images/my_face.png" class="img" />
+  </div>
 
-  <h1 class="page_heading">Featured Projects</h1>
+  <h2 class="about_content">
+    {{ page.caption | markdownify }}
+  </h2>
+  
+  <div class="about_table">
+  {% for elem in page.table %}
+    <div class="about_row">
+      <div class="about_icon">
+        <img src="{{ site.url }}{{elem.icon}}" class="img" />
+      </div>
+      
+      <div class="about_parraph">
+        <p>{{ elem.parraph | markdownify }}</p>
+      </div>
+        
+    </div>
+  {% endfor %}
+  </div>
+  
+  <h1 class="page_heading"><strong>Featured Projects</strong></h1>
   
   <ul class="featured_projects">  
     
@@ -14,12 +34,13 @@ layout: default
         
     <div class="project">
     
+    {% assign content = project.content | strip_newlines %}
+    
       {% capture project_image %}
       <div class="project_image">
         <a href="{{ project.url | prepend: site.baseurl }}">
-          
           <div class="image_hover">
-            <img src="{{ project.image }}" alt="{{ project.title }}" class="image">
+            <img src="{{ project.image }}" alt="{{ project.title }}" class="image"/>
             <div class="overlay">
               <div class="text"><h2>{{ project.title }}</h2></div>
             </div>
@@ -30,10 +51,24 @@ layout: default
       
       {% capture project_text %}
       <div class="project_text">
-        <a href="{{ project.url | prepend: site.baseurl }}">
-        <h2>{{ project.title }}</h2>
-        </a>
+        <h2><strong>{{ project.title }}</strong></h2>
+                
+        {% if project.technologies %}
+        <ul class="tags">
+          {% for tech in project.technologies %}
+            <li><div class="tag">{{tech}}</a></li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        
         {{ project.abstract }}
+        
+        
+        {% if content != ""  %}
+        <div class="readmore">
+            <a href="{{ project.url | prepend: site.baseurl }}"> See More... </a>
+        </div>
+        {% endif %}
       </div>
       {% endcapture %}
       
@@ -53,6 +88,8 @@ layout: default
     <br>
     {% endif %}
     {% endfor %}
+    
+    <a href="{{ site.baseurl}}/portfolio/" > <h3>Checkout my portfolio to see more of my work... </h3></a>
   </ul>
   
   </div>

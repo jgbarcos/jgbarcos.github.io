@@ -130,8 +130,7 @@ $default_layout: (
     }
   }
   
-  
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
 }
 
 
@@ -195,3 +194,55 @@ $default_layout: (
    border-left-color: crimson; 
 }
 
+//
+// About styles
+//
+
+.face_image {
+  text-align: center;
+  .img{
+    max-width: 300px;
+    display: inline-block;
+    border-radius: 50%;
+  }
+}
+
+.about_content {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  
+}
+
+$table_layout: (
+  columns: 5,
+  gutter: 2rem,
+  media: "(min-width: 768px)",
+);
+
+.about_table {
+  margin-bottom: 2.5rem;
+
+  .about_row {
+    @include grid-container;
+    padding: 10px;
+    
+    .about_icon {
+      .img{
+        max-width: 100px;
+        display: block;
+        margin: auto;
+      }
+      @include grid-column(1, $small_layout);
+      @include grid-media($table_layout){
+        @include grid-column(1, $table_layout);
+      }
+    }
+    
+    .about_parraph {
+      @include grid-column(1, $small_layout);
+      @include grid-media($table_layout){
+        @include grid-column(4, $table_layout);
+      }
+    }
+  }
+}
