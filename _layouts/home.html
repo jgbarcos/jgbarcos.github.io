@@ -22,7 +22,10 @@ layout: default
       <li>
         <b>{{ paper.author }}</b>
         {% if paper.pdf %}
-          <a href="{{ paper.pdf }}">(pdf)</a>
+          (<a href="{{ paper.pdf }}">PDF</a>)
+        {% endif %}
+        {% if paper.poster %}
+          (<a href="{{ paper.poster }}">Poster</a>)
         {% endif %}
         <br/>
         <i>{{ paper.title }}. </i>

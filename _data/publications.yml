@@ -4,9 +4,11 @@
   type: Conference
   where: NeurIPS 2019 workshop on Safety and Robustness in Decision Making
   pdf: https://drive.google.com/file/d/0B3mY6u_lryzdbWYzSHJjWjMxNHBYSDcwQTlTYjBEZGpzbG00/view
+  poster: https://drive.google.com/open?id=1Ds3quSchCK3cUZ_MeVskhu8jm6N7I91A
 - title: Fully Distributed Bayesian Optimization with Stochastic Policies
   author: Javier Garcia-Barcos, Ruben Martinez-Cantin
   year: 2019
   type: Conference
   where: Proceedings of the Twenty-Eighth International Joint Conference on Artificial Intelligence (IJCAI)
   pdf: https://www.ijcai.org/Proceedings/2019/0327.pdf
+  poster: https://drive.google.com/open?id=1ytZVSGB0TOqHt1ChfDniewjuJm7_QWum
