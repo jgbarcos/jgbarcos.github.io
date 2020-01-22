@@ -1,3 +1,0 @@
-rugby: https://thenounproject.com/term/rugby-ball/26039/
-gamedev: https://thenounproject.com/term/game-app/397471/
-machine_learning: https://thenounproject.com/term/k-means/961658/

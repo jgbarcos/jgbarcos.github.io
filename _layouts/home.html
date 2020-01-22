@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<div class="home">  
+<div class="home">
   <div class="face_image">
     <img src="{{ site.url }}/images/my_face.png" class="img" />
   </div>
@@ -9,33 +9,43 @@ layout: default
   <h2 class="about_content">
     {{ page.caption | markdownify }}
   </h2>
-  
+
+  <h1 class="page_heading"><strong>Publications</strong></h1>
+
   <div class="about_table">
-  {% for elem in page.table %}
-    <div class="about_row">
-      <div class="about_icon">
-        <img src="{{ site.url }}{{elem.icon}}" class="img" />
-      </div>
-      
-      <div class="about_parraph">
-        <p>{{ elem.parraph | markdownify }}</p>
-      </div>
-        
-    </div>
+  {% assign byyear = site.data.publications | group_by: "year" %}
+  {% for year in byyear %}
+    <h3> {{ year.name }} <hr> </h3>
+
+    <ul>
+    {% for paper in year.items %}
+      <li>
+        <b>{{ paper.author }}</b>
+        {% if paper.pdf %}
+          <a href="{{ paper.pdf }}">(pdf)</a>
+        {% endif %}
+        <br/>
+        <i>{{ paper.title }}. </i>
+        <br/>
+        In {{ paper.where }}
+      </li>
+    {% endfor %}
+    </ul>
   {% endfor %}
+
   </div>
-  
+
   <h1 class="page_heading"><strong>Featured Projects</strong></h1>
-  
-  <ul class="featured_projects">  
-    
+
+  <ul class="featured_projects">
+
     {% for project in site.portfolio %}
     {% if project.featured %}
-        
+
     <div class="project">
-    
+
     {% assign content = project.content | strip_newlines %}
-    
+
       {% capture project_image %}
       <div class="project_image">
         <a href="{{ project.url | prepend: site.baseurl }}">
@@ -48,11 +58,11 @@ layout: default
         </a>
       </div>
       {% endcapture %}
-      
+
       {% capture project_text %}
       <div class="project_text">
         <h2><strong>{{ project.title }}</strong></h2>
-                
+
         {% if project.technologies %}
         <ul class="tags">
           {% for tech in project.technologies %}
@@ -60,38 +70,32 @@ layout: default
           {% endfor %}
         </ul>
         {% endif %}
-        
+
         {{ project.abstract }}
-        
-        
+
+        <!--
         {% if content != ""  %}
         <div class="readmore">
             <a href="{{ project.url | prepend: site.baseurl }}"> See More... </a>
         </div>
         {% endif %}
+        -->
       </div>
       {% endcapture %}
-      
-      
-      
-      {% capture project_cycle %}{% cycle 'left', 'right' %}{% endcapture %}
-      {% if project_cycle == 'left' %}
-        {{ project_image }}
-        {{ project_text }}
-      {% else %}
-        {{ project_text }}
-        {{ project_image }}
-      {% endif %}
-        
+
+
+      {{ project_image }}
+      {{ project_text }}
+
     </div>
-      
+
     <br>
     {% endif %}
     {% endfor %}
-    
+
     <a href="{{ site.baseurl}}/portfolio/" > <h3>Checkout my portfolio to see more of my work... </h3></a>
   </ul>
-  
+
   </div>
 
 </div>

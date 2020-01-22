@@ -4,8 +4,8 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
 face: "/images/my_face.jpg"
-caption:  "Hi, I'm **Javier García Barcos**<br>Computer Scientist from Zaragoza (Spain)."
-table:
+caption:  "Hi, I'm **Javier García Barcos**<br>PhD Student at University of Zaragoza (Spain)."
+about-me:
  - icon: "/icons/machine_learning.svg"
    parraph: "**Machine Learning** is my main focus in academic projects. As a curious person, it amazed me all the possibilities that Machine Learning brings. I have experience in Bayesian Optimization, Neural Networks and Graphical Models."
  - icon: "/icons/gamedev.svg"

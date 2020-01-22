@@ -19,17 +19,17 @@ description: > # this means to ignore newlines until "baseurl:"
   Webpage and portfolio of Javier García Barcos.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: 
+twitter_username:
 github_username: jgbarcos
 
 collections:
   portfolio:
     output: true
     permalink: /portfolio/:path/
-    
+
     values:
       featured: no
-    
+
 sass:
     sass_dir: _sass
 
